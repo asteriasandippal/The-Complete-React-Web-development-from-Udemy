@@ -6,6 +6,19 @@ const template = (
         <p>Some Content here.</p>
     </div>
 );
+let user = {
+    name: 'Sandip',
+    age: 24,
+    location: 'bangalore'
+}
+const templateTwo = (
+    <div>
+        <h1>{user.name}</h1>
+        <p>Age: {user.age}</p>
+        <p>Location: {user.location}</p>
+    </div>
+);
+
 const appRoot = document.getElementById("app");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
