@@ -1,3 +1,13 @@
 Install live-server: npm install -g live-server
 Move your terminal to where your pages live: cd <path-to-content>
 Start the server: live-server [public].
+
+
+
+Use Bable script in the terminal
+=============================================
+
+:= babel .\src\app.js --out-file=public/scripts/app.js --presets=env,react
+
+:= babel .\src\app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
