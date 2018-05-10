@@ -1,22 +1,17 @@
-"use strict";
+'use strict';
 
-var nameVar = "Sandip";
-var nameVar = "Rayel";
-console.log('nameVar', nameVar);
+var squre = function squre(x) {
+    return x * x;
+};
+console.log(squre(8));
 
-var nameLet = "Jane";
-nameLet = "Julei";
-console.log('nameLet', nameLet);
+var squreArrow = function squreArrow(x) {
+    return x * x;
+};
+console.log(squreArrow(8));
 
-var nameConst = "Frank";
-// const nameConst = "Guther";
-console.log('nameConst', nameConst);
+var getFirstName = function getFirstName(fullName) {
+    return fullName.split(' ')[0];
+};
 
-var fullName = "Sandip Pal";
-
-if (fullName) {
-    var firstName = fullName.split(' ')[0];
-    console.log('Inside', firstName);
-}
-
-console.log('Outside', firstName);
+console.log(getFirstName('Sandip Pal'));
