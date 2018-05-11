@@ -42,40 +42,49 @@ function getLocation(location) {
 }
 var count = 0;
 var addOne = function addOne() {
-    console.log('AddOne');
+    count++;
+    console.log('AddOne', count);
+    renderCounterApp();
 };
 var minsOne = function minsOne() {
-    console.log('MinsOne');
+    count--;
+    renderCounterApp();
+    console.log('MinsOne', count);
 };
 var reset = function reset() {
+    count = 0;
     console.log('Reset');
+    renderCounterApp();
 };
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        'Count: ',
-        count
-    ),
-    React.createElement(
-        'button',
-        { onClick: addOne },
-        '+1'
-    ),
-    React.createElement(
-        'button',
-        { onClick: minsOne },
-        '-1'
-    ),
-    React.createElement(
-        'button',
-        { onClick: reset },
-        'Reset'
-    )
-);
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoot);
+var renderCounterApp = function renderCounterApp() {
+    var templateTwo = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h1',
+            null,
+            'Count: ',
+            count
+        ),
+        React.createElement(
+            'button',
+            { onClick: addOne },
+            '+1'
+        ),
+        React.createElement(
+            'button',
+            { onClick: minsOne },
+            '-1'
+        ),
+        React.createElement(
+            'button',
+            { onClick: reset },
+            'Reset'
+        )
+    );
+    ReactDOM.render(templateTwo, appRoot);
+};
+renderCounterApp();

@@ -23,23 +23,32 @@ function getLocation(location) {
 }
 let count = 0;
 const addOne = () => {
-    console.log('AddOne');
+    count++;
+    console.log('AddOne', count);
+    renderCounterApp();
 }
 const minsOne = () => {
-    console.log('MinsOne');
+    count--;
+    renderCounterApp();
+    console.log('MinsOne', count);
 }
 const reset = () => {
+    count = 0;
     console.log('Reset');
+    renderCounterApp();
 }
-const templateTwo = (
-    <div>
-        <h1>Count: {count}</h1>
-        <button onClick={addOne}>+1</button>
-        <button onClick={minsOne}>-1</button>
-        <button onClick={reset}>Reset</button>
-    </div>
-);
 
 const appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoot);
+const renderCounterApp = () => {
+    const templateTwo = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={addOne}>+1</button>
+            <button onClick={minsOne}>-1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    );
+    ReactDOM.render(templateTwo, appRoot);
+}
+renderCounterApp();
