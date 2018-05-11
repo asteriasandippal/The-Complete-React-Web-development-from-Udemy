@@ -51,25 +51,22 @@ var render = function render() {
             null,
             app.options.length
         ),
-        React.createElement(
+        app.options.length > 0 ? React.createElement(
             'button',
             { onClick: onRemoveAll },
             'Remove All'
-        ),
-        React.createElement(
+        ) : null,
+        app.options.length > 0 ? React.createElement(
             'ol',
             null,
-            React.createElement(
-                'li',
-                null,
-                'Item One'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Item Two'
-            )
-        ),
+            app.options.map(function (option) {
+                return React.createElement(
+                    'li',
+                    { key: option },
+                    option
+                );
+            })
+        ) : null,
         React.createElement(
             'form',
             { onSubmit: onFormSubmit },
