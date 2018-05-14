@@ -179,7 +179,7 @@ var AddOptions = function (_React$Component6) {
 
             var option = e.target.elements.option.value.trim();
             if (option) {
-                // this.options.push(option);
+                this.options.push(option);
                 console.log(option);
             }
         }

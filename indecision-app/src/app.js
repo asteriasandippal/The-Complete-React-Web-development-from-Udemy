@@ -74,7 +74,7 @@ class AddOptions extends React.Component {
 
         const option = e.target.elements.option.value.trim();
         if (option) {
-            // this.options.push(option);
+            this.options.push(option);
             console.log(option);
         }
 
