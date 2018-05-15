@@ -26,7 +26,7 @@ class IndecisionApp extends React.Component {
         // console.log(prevProps, prevState);
         if (prevState.options.length !== this.state.options.length) {
             console.log('Saving Data!');
-            const json  =JSON.stringify(this.state.options);
+            const json = JSON.stringify(this.state.options);
             localStorage.setItem('options', json);
         }
     }
