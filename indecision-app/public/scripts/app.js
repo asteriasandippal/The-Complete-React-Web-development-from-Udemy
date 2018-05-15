@@ -17,7 +17,7 @@ var IndecisionApp = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
         _this.state = {
-            options: ['Thing One', 'Thing two', 'Thing three']
+            options: props.options
         };
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handlePick = _this.handlePick.bind(_this);
@@ -84,6 +84,10 @@ var IndecisionApp = function (_React$Component) {
     return IndecisionApp;
 }(React.Component);
 
+IndecisionApp.defaultProps = {
+    options: []
+};
+
 var Header = function Header(props) {
     return React.createElement(
         'div',
@@ -93,12 +97,15 @@ var Header = function Header(props) {
             null,
             props.title
         ),
-        React.createElement(
+        props.subTitle && React.createElement(
             'h2',
             null,
             props.subTitle
         )
     );
+};
+Header.defaultProps = {
+    title: 'Indecision'
 };
 
 var Action = function Action(props) {
@@ -195,4 +202,4 @@ var AddOptions = function (_React$Component2) {
     return AddOptions;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(IndecisionApp, { options: [] }), document.getElementById('app'));
