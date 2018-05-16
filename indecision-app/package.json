@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "live-server public/",
+    "dev-server": "webpack-dev-server",
     "build": "webpack --watch",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
   },
@@ -24,6 +25,7 @@
     "live-server": "^1.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "validator": "^10.2.0"
+    "validator": "^10.2.0",
+    "webpack-dev-server": "^3.1.4"
   }
 }
