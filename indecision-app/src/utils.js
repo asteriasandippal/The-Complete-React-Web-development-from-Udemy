@@ -1,9 +1,15 @@
 console.log('Utils js runing...!');
 
-const squer = (x) => x * x; 
+export const squer = (x) => x * x; 
 console.log(squer(3));
 
-const add = (x, y) => x + y; 
+export const add = (x, y) => x + y; 
 console.log(add(3, 10));
 
-export {squer, add};
+// const substract = (x, y) => x - y; 
+// console.log(substract(20, 10));
+// export default substract;
+
+export default (x, y) => x - y; 
+
+// export {squer, add, substract as default};
