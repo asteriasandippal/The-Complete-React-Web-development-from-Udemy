@@ -3,31 +3,29 @@ import ReactDOM from 'react-dom';
 
 import IndecisionApp from './components/IndecisionApp';
 
-ReactDOM.render(<IndecisionApp options={[]} />, document.getElementById('app'));
+// ReactDOM.render(<IndecisionApp options={[]} />, document.getElementById('app'));
 
-// class OldSyntax {
-//     constructor() {
-//         this.name = 'Mike';
-//         this.getGreeeting = this.getGreeeting.bind(this);
-//     }
-//     getGreeeting() {
-//         return `Hi, My name is ${this.name}.`;
-//     }
-// }
+const Layout = (props) => {
+    return (
+        <div>
+            <p>Header</p>
+            {props.content}
+            {props.content}
+            <p>Footer</p>
+        </div>
+    )
+};
 
-// const oldSyntax = new OldSyntax();
-// console.log(oldSyntax);
-// const getGreeeting = oldSyntax.getGreeeting;
-// console.log(getGreeeting());
+const Template = () => {
+    return (
+        <div>
+            <h2>Title</h2>
+            <p>Content</p>
+        </div>
+    )
+};
 
-// class NewSyntax {
-//     name = 'New Mike';
-//     getGreeeting = () => {
-//         return `Hi, My name is ${this.name}.`;
-//     }
-// }
-
-// const newSyntax = new NewSyntax();
-// console.log(newSyntax);
-// const newGetGreeeting = oldSyntax.getGreeeting;
-// console.log(newGetGreeeting());
+ReactDOM.render(
+    <Layout content={<Template/>}>
+        <p>Lerwrw werwer</p>
+    </Layout>, document.getElementById('app'));
