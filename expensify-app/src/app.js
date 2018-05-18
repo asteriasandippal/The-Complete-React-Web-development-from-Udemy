@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link, NavLink  } from 'react-router-dom';
 import 'normalize.css/normalize.css'; 
 import './styles/styles.scss';
 
@@ -24,18 +24,31 @@ const EditExpenseDashboardPage = () => (
 
 const NotFoundPage = () => (
     <div>
-        404!
+        404! <Link to="/">Go to Home</Link>
     </div>
+);
+
+const Header = () => (
+    <header>
+        <h1>Expensify</h1>
+        <NavLink exact to="/" activeClassName="is-active">Dashboard</NavLink>
+        <NavLink to="/create" activeClassName="is-active">Create Expense</NavLink>
+        <NavLink to="/edit" activeClassName="is-active">Edit Expense</NavLink>
+        <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+    </header>
 );
 
 const routes = (
     <BrowserRouter>
-        <Switch>
-            <Route path="/" component={ExpenseDashboardPage} exact />
-            <Route path="/create" component={AddExpenseDashboardPage}/>
-            <Route path="/edit" component={EditExpenseDashboardPage}/>
-            <Route component={NotFoundPage}/>
-        </Switch>
+        <div>
+            <Header/>
+            <Switch>
+                <Route path="/" component={ExpenseDashboardPage} exact />
+                <Route path="/create" component={AddExpenseDashboardPage}/>
+                <Route path="/edit" component={EditExpenseDashboardPage}/>
+                <Route component={NotFoundPage}/>
+            </Switch>
+        </div>
     </BrowserRouter>
 );
 
