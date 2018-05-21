@@ -1,5 +1,7 @@
 console.log('Destructuring...');
 
+// Object Destructuring
+
 const person = {
     name: 'Sandip',
     age: 31,
@@ -30,3 +32,20 @@ const Book = {
 const { name: publisherName = 'Self-Publisher' } = Book.publisher;
 
 console.log(publisherName);
+
+
+// Array Desuructuring
+
+const address = ['1299 Jniper Stree', 'bangalore', 'India', '19832'];
+
+// const [street, cityName, state, zip] = address;
+const [, cityName, state = 'New York'] = address;
+
+console.log(`You are in ${cityName} ${state}`);
+
+
+const item = ['Coffee (hot)', '$2.00', '$2.50', '$2.75'];
+
+const [itemName, , mediumPrice] = item;
+
+console.log(`A medium ${itemName} costs ${mediumPrice}`);
