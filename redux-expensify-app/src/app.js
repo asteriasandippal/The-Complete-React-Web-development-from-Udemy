@@ -14,13 +14,13 @@ import { setTimeout } from 'timers';
 
 const store = configureStore();
 
-store.dispatch(addExpense({description: 'Water Bill'}));
-store.dispatch(addExpense({description: 'Gas Bill'}));
+store.dispatch(addExpense({description: 'Water Bill', amount: 4500}));
+store.dispatch(addExpense({description: 'Gas Bill', amount: 2400}));
 
-store.dispatch(setTextFilter('bill'));
+store.dispatch(setTextFilter('water'));
 
 setTimeout(() => {
-    store.dispatch(setTextFilter('Water'));    
+    store.dispatch(setTextFilter('bill'));    
 }, 4000);
 
 console.log(store.getState());
