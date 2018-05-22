@@ -1,8 +1,9 @@
 import React from 'react';
+import ExpenseList from './ExpenseList';
+
 const HomePage = () => (
     <div>
-        <h2>Welcome</h2>
-        <p>This is my sit and this is Home Page.</p>
+        <ExpenseList/>
     </div>
 );
 
