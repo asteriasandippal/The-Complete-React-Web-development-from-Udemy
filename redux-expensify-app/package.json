@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "test -- --watch" : "jest",
+    "test -- --watch": "jest",
     "server": "live-server public/",
     "dev-server": "webpack-dev-server",
     "build": "webpack --watch",
@@ -40,6 +40,7 @@
     "react-modal": "^3.4.4",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^16.4.0",
     "redux": "^4.0.0",
     "uuid": "^3.2.1",
     "validator": "^10.2.0",
