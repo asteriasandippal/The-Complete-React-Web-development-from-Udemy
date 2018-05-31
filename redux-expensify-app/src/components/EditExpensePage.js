@@ -4,7 +4,7 @@ import ExpenseForm from './ExpenseForm';
 
 import { editExpense, removeExpense } from '../actions/expenses';
 
-class EditExpensePage extends React.Component {
+export class EditExpensePage extends React.Component {
     onSubmit = (expense) => {
         this.props.editExpense(this.props.expense.id, expense);
         console.log('Update', expense);
@@ -37,6 +37,6 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = (dispatch, props) => ({
     editExpense: (id, expense) => dispatch(editExpense(id, expense)),
     removeExpense: (data) => dispatch(removeExpense(data))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
