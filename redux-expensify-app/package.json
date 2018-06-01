@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest --watch --config=jest.config.json",
     "test -- --watch": "jest --config=jest.config.json",
-    "server": "live-server public/",
+    "server:live": "live-server public/",
+    "server": "node server/server.js",
+    "heroku-postbuild": "node run build:prod",
     "dev-server": "webpack-dev-server",
     "build": "webpack --watch",
     "build:prod": "webpack -p --env production",
