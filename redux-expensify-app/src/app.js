@@ -12,6 +12,7 @@ import { addExpense } from '../src/actions/expenses';
 import { setTextFilter } from '../src/actions/filters';
 import getVisibleExpense from '../src/selectors/expenses';
 import { setTimeout } from 'timers';
+import './firebase/firebase';
 
 const store = configureStore();
 

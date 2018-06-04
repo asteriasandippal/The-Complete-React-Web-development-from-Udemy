@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "express": "^4.16.3",
+    "firebase": "^5.0.4",
     "live-server": "^1.2.0",
     "moment": "^2.22.1",
     "normalize.css": "^8.0.0",
