@@ -13,6 +13,7 @@ import { setTextFilter } from '../src/actions/filters';
 import getVisibleExpense from '../src/selectors/expenses';
 import { setTimeout } from 'timers';
 import './firebase/firebase';
+import './playground/promises';
 
 const store = configureStore();
 
