@@ -24,14 +24,14 @@ const dataBase = firebase.database();
 
 // dataBase.ref('Notes').set(notes);
 
-dataBase.ref('Notes').push({
-  title: 'ToDo',
-  body: 'React Native, Angular, pYthon'
-});
+// dataBase.ref('Notes').push({
+//   title: 'ToDo',
+//   body: 'React Native, Angular, pYthon'
+// });
 
-dataBase.ref('Notes/-LEEvB_1QfW2QrgYGBbh').update({
-  body: 'Buy food'
-});
+// dataBase.ref('Notes/-LEEvB_1QfW2QrgYGBbh').update({
+//   body: 'Buy food'
+// });
 
 // dataBase.ref().set({
 //   name: 'Sandip Pal',
@@ -78,3 +78,24 @@ dataBase.ref('Notes/-LEEvB_1QfW2QrgYGBbh').update({
 //     const val = dataSnapshot.val();
 //     console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
 //   });
+
+dataBase.ref('Expenses').push({
+  description: 'Rent',
+  note: '',
+  amount: 109500,
+  createdAt: 973423234
+});
+
+dataBase.ref('Expenses').push({
+  description: 'Phone Bill',
+  note: '',
+  amount: 5900,
+  createdAt: 973423234
+});
+
+dataBase.ref('Expenses').push({
+  description: 'Food Bill',
+  note: '',
+  amount: 1200,
+  createdAt: 973423234
+});
