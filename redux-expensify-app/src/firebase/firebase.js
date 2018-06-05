@@ -79,23 +79,53 @@ const dataBase = firebase.database();
 //     console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
 //   });
 
-dataBase.ref('Expenses').push({
-  description: 'Rent',
-  note: '',
-  amount: 109500,
-  createdAt: 973423234
-});
+// dataBase.ref('Expenses').push({
+//   description: 'Rent',
+//   note: '',
+//   amount: 109500,
+//   createdAt: 973423234
+// });
 
-dataBase.ref('Expenses').push({
-  description: 'Phone Bill',
-  note: '',
-  amount: 5900,
-  createdAt: 973423234
-});
+// dataBase.ref('Expenses').push({
+//   description: 'Phone Bill',
+//   note: '',
+//   amount: 5900,
+//   createdAt: 973423234
+// });
 
-dataBase.ref('Expenses').push({
-  description: 'Food Bill',
-  note: '',
-  amount: 1200,
-  createdAt: 973423234
+// dataBase.ref('Expenses').push({
+//   description: 'Food Bill',
+//   note: '',
+//   amount: 1200,
+//   createdAt: 973423234
+// });
+
+// dataBase.ref('Expenses')
+//   .once('value')
+//   .then((snapshot) => {
+//     console.log(snapshot.val());
+
+//     const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+//     console.log(expenses);
+//   });
+
+// dataBase.ref('Expenses').on('value', (snapshot) => {
+//   const expenses = [];
+//   snapshot.forEach((childSnapshot) => {
+//     expenses.push({
+//       id: childSnapshot.key,
+//       ...childSnapshot.val()
+//     });
+//   });
+//   console.log(expenses);
+// });
+
+dataBase.ref('Expenses').on('child_removed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
 });
