@@ -44,3 +44,16 @@ dataBase.ref().update({
 //   }).catch((error) => {
 //     console.log('Did not remove data',  error);
 //   });
+
+dataBase.ref()
+  .once( 'value' )
+  .then((dataSnapshot) => {
+    const val = dataSnapshot.val();
+    console.log('Once', val);
+  });
+
+  dataBase.ref().on('value', (dataSnapshot) => {
+    console.log(dataSnapshot.val());
+    const val = dataSnapshot.val();
+    console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+  });
