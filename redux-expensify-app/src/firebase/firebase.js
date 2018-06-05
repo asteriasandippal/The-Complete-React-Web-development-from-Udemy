@@ -12,30 +12,38 @@ const config = {
 firebase.initializeApp(config);
 const dataBase = firebase.database();
 
-dataBase.ref().set({
-  name: 'Sandip Pal',
-  age: 42,
-  isSingle: false,
-  location: {
-      city: 'Bangalore',
-      country: 'India'
-  }
-}).then(() => {
-  console.log('Data is saved');
-}).catch((error) => {
-  console.log('This failed', error);
-});
+// dataBase.ref().set({
+//   name: 'Sandip Pal',
+//   age: 42,
+//   isSingle: false,
+//   location: {
+//       city: 'Bangalore',
+//       country: 'India'
+//   }
+// }).then(() => {
+//   console.log('Data is saved');
+// }).catch((error) => {
+//   console.log('This failed', error);
+// });
 
-dataBase.ref('age').set(12);
-dataBase.ref('location/city').set('Kolkata');
+// dataBase.ref('age').set(12);
+// dataBase.ref('location/city').set('Kolkata');
 
-dataBase.ref('attributes').set({
-  width: 149,
-  height: 23
-}).then(() => {
-  console.log('Second set call worked');
-}).catch((e) => {
-  console.log('Things didnt for the second error', e);
-});
+// dataBase.ref('attributes').set({
+//   width: 149,
+//   height: 23
+// }).then(() => {
+//   console.log('Second set call worked');
+// }).catch((e) => {
+//   console.log('Things didnt for the second error', e);
+// });
 
-console.log('I made a request to change the data.');
+// console.log('I made a request to change the data.');
+
+dataBase.ref('isSingle')
+  .remove()
+  .then(() => {
+    console.log('Data was remove');
+  }).catch((error) => {
+    console.log('Did not remove data',  error);
+  });
