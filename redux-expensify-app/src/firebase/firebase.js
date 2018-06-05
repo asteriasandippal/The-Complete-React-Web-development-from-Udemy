@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase, { database } from "firebase";
 
 const config = {
     apiKey: "AIzaSyBi1Ii4BBauBozyRAeW2Or8mTCtEIoxq4Q",
@@ -10,7 +10,21 @@ const config = {
   };
 
   firebase.initializeApp(config);
+  const dataBase = firebase.database();
+  dataBase.ref().set({
+    name: 'Sandip Pal',
+    age: 42,
+    isSingle: false,
+    location: {
+        city: 'Bangalore',
+        country: 'India'
+    }
+  });
 
-  firebase.database().ref().set({
-    name: 'Sandip Pal'
+  dataBase.ref('age').set(12);
+  dataBase.ref('location/city').set('Kolkata');
+
+  dataBase.ref('attributes').set({
+    width: 149,
+    height: 23
   });
