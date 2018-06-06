@@ -17,17 +17,17 @@ import './playground/promises';
 
 const store = configureStore();
 
-store.dispatch(addExpense({description: 'Water Bill', amount: 4500}));
-store.dispatch(addExpense({description: 'Gas Bill', amount: 2400}));
-store.dispatch(addExpense({description: 'Rent', amount: 3200}));
+// store.dispatch(addExpense({description: 'Water Bill', amount: 4500}));
+// store.dispatch(addExpense({description: 'Gas Bill', amount: 2400}));
+// store.dispatch(addExpense({description: 'Rent', amount: 3200}));
 
-console.log(store.getState());
+// console.log(store.getState());
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpense(state.expenses, state.filters);
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpense(state.expenses, state.filters);
 
-console.log(visibleExpenses);
-console.log('testing');
+// console.log(visibleExpenses);
+// console.log('testing');
 const jsx = (
     <Provider store={store}>
         <AppRouter />

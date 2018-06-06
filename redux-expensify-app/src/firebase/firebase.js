@@ -12,6 +12,11 @@ const config = {
 firebase.initializeApp(config);
 const dataBase = firebase.database();
 
+export { firebase, dataBase as default };
+
+
+
+
 // const notes = [{
 //   id: '12',
 //   title: 'First Note!',
@@ -126,6 +131,6 @@ const dataBase = firebase.database();
 //   console.log(expenses);
 // });
 
-dataBase.ref('Expenses').on('child_removed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-});
+// dataBase.ref('Expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
