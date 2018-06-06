@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --config=jest.config.json",
+    "test": "cross-env NODE_ENV=test jest --watch --config=jest.config.json",
     "test -- --watch": "jest --config=jest.config.json",
     "server:live": "live-server public/",
     "server": "node server/server.js",
@@ -25,7 +25,9 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "chalk": "^2.4.1",
+    "cross-env": "^5.1.6",
     "css-loader": "^0.28.11",
+    "dotenv": "^6.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
